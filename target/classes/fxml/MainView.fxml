@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tes_labpbo.MainController"
+            style="-fx-background-color: white;">
+
+    <top>
+        <VBox spacing="8.0">
+            <padding>
+                <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+            </padding>
+            <HBox spacing="10.0">
+                <Label text="Cari Wisata:"/>
+                <TextField fx:id="searchField" promptText="Nama tempat wisata"/>
+                <Label text="Kategori:"/>
+                <ComboBox fx:id="categoryComboBox" promptText="Pilih kategori" />
+                <Label text="Lokasi:"/>
+                <TextField fx:id="locationField" promptText="Lokasi"/>
+                <Button text="Cari" onAction="#onSearch"/>
+                <Button text="Reset" onAction="#onReset"/>
+            </HBox>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox fx:id="wisataListContainer" spacing="8">
+                <padding>
+                    <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+                </padding>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

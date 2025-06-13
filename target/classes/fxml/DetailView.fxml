@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tes_labpbo.DetailController"
+            style="-fx-background-color: white;">
+
+    <top>
+        <VBox spacing="5" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+            </padding>
+            <Label fx:id="nameLabel" style="-fx-font-weight: bold; -fx-font-size: 18px;" />
+            <HBox spacing="10">
+                <Label fx:id="categoryLabel" style="-fx-text-fill: #555;" />
+                <Label fx:id="locationLabel" style="-fx-text-fill: #555;" />
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" BorderPane.alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+            </padding>
+            <ScrollPane fx:id="descScroll" prefHeight="120" maxHeight="120" fitToWidth="true" style="-fx-background-color:transparent;">
+                <TextArea fx:id="fullDescriptionArea" wrapText="true" editable="false" style="-fx-control-inner-background: #fdfdfd;" />
+            </ScrollPane>
+            <HBox spacing="10" fx:id="imageGallery" />
+
+            <Separator />
+
+            <Label text="Ulasan &amp; Rating:" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+            <ListView fx:id="reviewListView" prefHeight="200" />
+
+            <Label text="Tambah Ulasan:" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+            <HBox spacing="5" alignment="CENTER_LEFT">
+                <TextField fx:id="nameField" promptText="Nama Anda" prefWidth="150" />
+                <ComboBox fx:id="ratingComboBox" promptText="Rating" prefWidth="100" />
+            </HBox>
+            <TextArea fx:id="commentArea" promptText="Komentar Anda..." prefRowCount="3" />
+            <Button text="Kirim Ulasan" onAction="#onSubmitReview" />
+        </VBox>
+    </center>
+</BorderPane>
